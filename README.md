@@ -10,9 +10,9 @@ The server used in this app is Firebase, and the code therefore is in Node.js.
 
 ### OpenAI
 
-1. Create an OpenAI account
+1. Create an OpenAI account [here](https://platform.openai.com)
 2. Create an API key [here](https://platform.openai.com/account/api-keys)
-3. create a `.env` file in the functions directory with the content `OPENAI_API_KEY=[your key]`
+3. Create a `.env` file in the functions directory with the content `OPENAI_API_KEY=[your key]`
 
 ### Firebase
 
