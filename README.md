@@ -2,7 +2,7 @@
 
 Using OpenAI in Slack.
 
-This will allow you to use a slash command in Slack to ask the OpenAI API anything :)
+This will allow you to use a slash command in Slack to ask the OpenAI API anything 🧙‍♂️
 
 The server used in this app is Firebase, and the code therefore is in Node.js.
 
@@ -31,3 +31,7 @@ The server used in this app is Firebase, and the code therefore is in Node.js.
 In a channel in Slack, run your command!
 
 e.g. `/openai Why are monkeys so hairy?`
+
+## Related projects
+
+This project was inspired by Mark Hartnady. He created a similar project using Python. His code [here](https://github.com/hartnady/PythonAnywhere).
