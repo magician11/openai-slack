@@ -26,7 +26,8 @@ The server used in this app is Firebase, and the code therefore is in Node.js.
 
 1. Create a new Slack bot [here](https://api.slack.com/apps/)
 2. Under Slack Commands, create a new command, and use the request URL found in your Firebase Functions dashboard
-3. Then go to the Install App options
+3. Then go to Install App and install the app to your workspace
+4. Under Basic Information copy the Verification Token, then in your .env file add the line `SLACK_TOKEN=[your token]`
 
 ## Usage
 
