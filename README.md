@@ -20,11 +20,13 @@ The server used in this app is Firebase, and the code therefore is in Node.js.
 2. Edit `.firebaserc` and change the project ID to your new Firebase project ID
 3. `cd functions` and run `npm install`
 4. run `firebase deploy`
+5. Upgrade your Firebase account to the Blaze plan (so you can make outbound calls from your code)
 
 ### Slack
 
 1. Create a new Slack bot [here](https://api.slack.com/apps/)
 2. Under Slack Commands, create a new command, and use the request URL found in your Firebase Functions dashboard
+3. Then go to the Install App options
 
 ## Usage
 
