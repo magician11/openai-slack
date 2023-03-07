@@ -6,6 +6,8 @@ This will allow you to use a slash command in Slack to ask the OpenAI API anythi
 
 The server used in this app is Firebase, and the code therefore is in Node.js.
 
+I did a video walkthrough how to do this [here](https://www.youtube.com/watch?v=CgggUxBzpiM).
+
 ## Setup
 
 ### OpenAI
