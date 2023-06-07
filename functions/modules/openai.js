@@ -1,25 +1,26 @@
 import { Configuration, OpenAIApi } from 'openai';
-import functions from 'firebase-functions';
-
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY
-});
-const openai = new OpenAIApi(configuration);
+import { error } from 'firebase-functions/logger';
 
 const createCompletion = async prompt => {
-  functions.logger.log(`About to complete the prompt "${prompt}"...`);
+  const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY
+  });
+
+  const openai = new OpenAIApi(configuration);
+
+  let response;
   try {
-    const completion = await openai.createCompletion({
+    response = await openai.createCompletion({
       model: 'text-davinci-003',
-      prompt,
-      temperature: 0.6,
+      prompt: `${prompt}. Answer as an excitable hippie!`,
       max_tokens: 333
     });
-    functions.logger.log('completion.data', completion.data);
-    return completion.data.choices[0].text;
-  } catch (error) {
-    functions.logger.error('Error completing', error);
+  } catch (err) {
+    error('Error with OpenAI call', err);
+    throw new Error(err.message);
   }
+
+  return response.data.choices[0].text;
 };
 
 export { createCompletion };
