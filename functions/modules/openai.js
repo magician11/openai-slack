@@ -12,7 +12,7 @@ const createCompletion = async prompt => {
   try {
     response = await openai.createCompletion({
       model: 'text-davinci-003',
-      prompt: `${prompt}. Answer as an excitable hippie!`,
+      prompt,
       max_tokens: 333
     });
   } catch (err) {
