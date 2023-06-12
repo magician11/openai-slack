@@ -3,7 +3,7 @@ import { info } from 'firebase-functions/logger';
 import got from 'got';
 import { createCompletion } from './modules/openai.js';
 
-export const helloWorld = onRequest(async (request, response) => {
+export const slack = onRequest(async (request, response) => {
   info(`${request.body.command} ${request.body.text}`, request.body);
 
   // Confirming receipt
