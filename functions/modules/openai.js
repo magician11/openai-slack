@@ -1,18 +1,16 @@
-import { Configuration, OpenAIApi } from 'openai';
+import OpenAI from 'openai';
 import { error } from 'firebase-functions/logger';
 
-const createCompletion = async prompt => {
-  const configuration = new Configuration({
+const createCompletion = async content => {
+  const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
   });
 
-  const openai = new OpenAIApi(configuration);
-
-  let response;
+  let chatCompletion;
   try {
-    response = await openai.createCompletion({
-      model: 'text-davinci-003',
-      prompt,
+    chatCompletion = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content }],
       max_tokens: 333
     });
   } catch (err) {
@@ -20,7 +18,7 @@ const createCompletion = async prompt => {
     throw new Error(err.message);
   }
 
-  return response.data.choices[0].text;
+  return chatCompletion.choices[0].message.content;
 };
 
 export { createCompletion };
